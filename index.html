@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <title>MM Converter</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container bg-dark rounded"><br>
+        <h1 class="text-light">Millimeter Converter</h1><br>
+        
+        <label class="text-light"><b>Type Desired Value :</b></label>
+        <input type="number" name="mm" class="form-control" placeholder="Millimeter Value"><br>
+        
+        <div class="row">
+            <div class="col-md-3">
+                <button class="btn btn-light" onclick="centimeter()">Convert to Centimeter</button>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-light" onclick="meter()">Convert to Meter</button>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-light" onclick="kilometer()">Convert to Kilometer</button>
+            </div>
+        </div><br>
+
+        <label class="text-light"><b>Your Converted Value :<b></label>
+        <input type="number" name="result" class="form-control" placeholder="Converted Value" disabled><br>
+
+    </div>
+
+<script>
+function centimeter() {    
+    var base = document.getElementsByName('mm')[0].value;
+    var result = base / 10 ;    
+    document.getElementsByName('result')[0].value= result;
+}
+function meter() {    
+    var base = document.getElementsByName('mm')[0].value;
+    var result = base / 1000 ;    
+    document.getElementsByName('result')[0].value= result;
+}
+function kilometer() {    
+    var base = document.getElementsByName('mm')[0].value;
+    var result = base / 1000000 ;    
+    document.getElementsByName('result')[0].value= result;
+}
+</script>
+
+</body>
+</html>
